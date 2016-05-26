@@ -16,7 +16,7 @@ def tongzhi(num):
 	rate = tag.parent.parent(class_="bg")[0].text
 	brand = tag.parent.parent.a.text
 	value = '%s,%s,%s' % (brand, price, rate)
-	Notifier.notify(value.encode('utf-8'), title='基金估值', contentImage='/Users/jyyan/Desktop/jijin_guess/Icon.icns')
+	Notifier.notify(value.encode('utf-8'), title='基金估值', contentImage='/Users/jyyan/Desktop/jijin_guess/Icon.icns', sound='Submarine')
 	
 
 num = sys.argv[1]
