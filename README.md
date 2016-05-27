@@ -12,5 +12,8 @@ pip install -r requirement.txt
 ### run the cronjob script
 ```
 (sudo) chmod +x cronrun.sh
-./run.sh
+./cronrun.sh
+
+#if you want to remove the crontab
+./cronrun.sh --remove
 ```
