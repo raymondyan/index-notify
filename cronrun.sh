@@ -8,7 +8,8 @@ test "$1" = --remove && mode=remove || mode=add
 cron_unique_label="# $PWD"
 
 #get the crontab
-crontab="$0".crontab
+sh generate.sh
+crontab=notify.crontab
 
 #set a bak for the crontab
 crontab_bak=$crontab.bak
