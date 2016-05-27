@@ -1,13 +1,20 @@
+#to the path of the script
 cd $(dirname "$0")
 
+#get the method of the scprit
 test "$1" = --remove && mode=remove || mode=add
 
+#output an label of the cronjob
 cron_unique_label="# $PWD"
 
+#get the crontab
 crontab="$0".crontab
+
+#set a bak for the crontab
 crontab_bak=$crontab.bak
 test -f $crontab || cp $crontab $crontab
 
+# Method - use the label to check whether the crontab is existed
 crontab_exists() {
     crontab -l 2>/dev/null | grep -x "$cron_unique_label" >/dev/null 2>/dev/null
 }
