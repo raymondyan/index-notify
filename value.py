@@ -14,11 +14,17 @@ def notification(num,soup):
 	brand = tag.parent.parent.a.text.encode('utf-8')
 	value = '%s\t%s' % (price, rate)
 	Notifier.notify(value.encode('utf-8'),title=brand,group=num, remove=num, sound='Glass')
+
+def readlist():
+	f = open('list.txt', 'r')
+	k = f.readlines()
+	return map(lambda x:x.strip(),k)
 	
 if __name__ == "__main__":
 	url = "http://fund.eastmoney.com/fundguzhi.html"
 	content = urllib2.urlopen(url).read()
 	soup = BeautifulSoup(content,"html.parser")
-	for num in sys.argv[1:]:
+	list = readlist()
+	for num in list:
 		notification(num,soup)
 		sleep(5)
