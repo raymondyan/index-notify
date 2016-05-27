@@ -12,5 +12,5 @@ pip install -r requirement.txt
 ### run the cronjob script
 ```
 (sudo) chmod +x cronrun.sh
-./cronrun.sh
+./run.sh
 ```
