@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import urllib2
 from os import system
 import sys
+import os
 from pync import Notifier
 from time import sleep
 
@@ -16,7 +17,8 @@ def notification(num,soup):
 	Notifier.notify(value.encode('utf-8'),title=brand,group=num, remove=num, sound='Glass')
 
 def readlist():
-	f = open('list.txt', 'r')
+	path = os.path.dirname(os.path.realpath(__file__))+'/list.txt'
+	f = open(path, 'r')
 	k = f.readlines()
 	return map(lambda x:x.strip(),k)
 	
